@@ -10,6 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.NET.ILLink.Tasks" />
+      <PackageReference Include="Microsoft.NET.Sdk.WebAssembly.Pack" />
       <ProjectReference Include="..\Shared\Shared.csproj" />
     </ItemGroup>
 
