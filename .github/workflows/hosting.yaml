@@ -30,7 +30,7 @@ jobs:
     if: ${{ github.event.workflow_run == null || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           sparse-checkout: ${{ env.HOSTING_PATH }}
           sparse-checkout-cone-mode: false
@@ -48,7 +48,7 @@ jobs:
       
       - name: Nx set SHAs
         id: setSHAs
-        uses: nrwl/nx-set-shas@v4.3.3
+        uses: nrwl/nx-set-shas@v4.4.0
         with:
           workflow-id: ci.yaml
           set-environment-variables-for-job: false
@@ -60,7 +60,7 @@ jobs:
       
       - name: Logs to artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: logs
           path: .hosting/logs/**
